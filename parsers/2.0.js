@@ -40,7 +40,7 @@ const getPropType = function (definition, exporting = false) {
         return 'PropTypes.arrayOf(' + getPropType(definition.items) + ')';
     case 'string':
         if (definition.format === 'date' || definition.format === 'date-time') {
-            return 'PropTypes.date';
+            return 'PropTypes.instanceOf(Date)';
         } else {
             return 'PropTypes.string';
         }
